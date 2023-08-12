@@ -24,6 +24,7 @@ services:
   meet:
     build: .
     container_name: "meet"
+    image: "iamlow/meet"
     ports:
       - "3000:3000"
     labels:
