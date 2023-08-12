@@ -85,6 +85,7 @@ const ActiveRoom = ({ roomName, userChoices, onLeave }: ActiveRoomProps) => {
         resolution: hq === 'true' ? VideoPresets.h2160 : VideoPresets.h720,
       },
       publishDefaults: {
+        simulcast: false,
         videoSimulcastLayers:
           hq === 'true'
             ? [VideoPresets.h1080, VideoPresets.h720]
