@@ -95,7 +95,7 @@ const ActiveRoom = ({ roomName, userChoices, onLeave }: ActiveRoomProps) => {
         deviceId: userChoices.audioDeviceId ?? undefined,
       },
       adaptiveStream: { pixelDensity: 'screen' },
-      dynacast: true,
+      dynacast: false,
     };
   }, [userChoices, hq]);
 
