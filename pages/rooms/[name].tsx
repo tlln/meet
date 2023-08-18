@@ -86,10 +86,11 @@ const ActiveRoom = ({ roomName, userChoices, onLeave }: ActiveRoomProps) => {
       },
       publishDefaults: {
         simulcast: false,
+        videoCodec: 'vp8',
         videoSimulcastLayers:
           hq === 'true'
-            ? [VideoPresets.h1080, VideoPresets.h720]
-            : [VideoPresets.h540, VideoPresets.h216],
+            ? [VideoPresets.h720]
+            : [VideoPresets.h540],
       },
       audioCaptureDefaults: {
         deviceId: userChoices.audioDeviceId ?? undefined,
