@@ -82,7 +82,7 @@ const ActiveRoom = ({ roomName, userChoices, onLeave }: ActiveRoomProps) => {
     return {
       videoCaptureDefaults: {
         deviceId: userChoices.videoDeviceId ?? undefined,
-        resolution: hq === 'true' ? VideoPresets.h2160 : VideoPresets.h720,
+        resolution: hq === 'true' ? VideoPresets.h2160 : VideoPresets.h540,
       },
       publishDefaults: {
         simulcast: false,
