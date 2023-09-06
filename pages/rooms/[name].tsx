@@ -107,8 +107,8 @@ const ActiveRoom = ({ roomName, userChoices, onLeave }: ActiveRoomProps) => {
           token={token}
           serverUrl={liveKitUrl}
           options={roomOptions}
-          video={userChoices.videoEnabled}
-          audio={userChoices.audioEnabled}
+          // video={userChoices.videoEnabled}
+          // audio={userChoices.audioEnabled}
           onDisconnected={onLeave}
         >
           <VideoConference chatMessageFormatter={formatChatMessageLinks} />
