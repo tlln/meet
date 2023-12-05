@@ -82,14 +82,18 @@ const ActiveRoom = ({ roomName, userChoices, onLeave }: ActiveRoomProps) => {
     return {
       videoCaptureDefaults: {
         deviceId: userChoices.videoDeviceId ?? undefined,
-        resolution: hq === 'true' ? VideoPresets.h2160 : VideoPresets.h540,
+        resolution: hq === 'true' ? VideoPresets.h1080 : VideoPresets.h720,
       },
       publishDefaults: {
+        videoEncoding: {
+          maxBitrate: 1_000_000,
+          maxFramerate: 30,
+        },
         simulcast: false,
         videoCodec: 'vp8',
         videoSimulcastLayers:
           hq === 'true'
-            ? [VideoPresets.h720]
+            ? [VideoPresets.h1080, VideoPresets.h720, VideoPresets.h540]
             : [VideoPresets.h540],
       },
       audioCaptureDefaults: {
@@ -107,8 +111,8 @@ const ActiveRoom = ({ roomName, userChoices, onLeave }: ActiveRoomProps) => {
           token={token}
           serverUrl={liveKitUrl}
           options={roomOptions}
-          // video={userChoices.videoEnabled}
-          // audio={userChoices.audioEnabled}
+          video={userChoices.videoEnabled}
+          audio={userChoices.audioEnabled}
           onDisconnected={onLeave}
         >
           <VideoConference chatMessageFormatter={formatChatMessageLinks} />
